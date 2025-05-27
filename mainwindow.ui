@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Студенты</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #fce4ec, stop:1 #e3f2fd);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12pt;
+}
+
+QTableWidget {
+    background-color: white;
+    border: 2px solid #b3e5fc;
+    border-radius: 10px;
+    gridline-color: #bbdefb;
+    selection-background-color: #b2ebf2;
+    selection-color: black;
+    font-size: 11pt;
+    alternate-background-color: #f1f8e9;
+}
+
+QHeaderView::section {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                      stop:0 #00acc1, stop:1 #26c6da);
+    color: white;
+    padding: 8px;
+    border: none;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+QPushButton {
+    padding: 10px 20px;
+    border-radius: 16px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 11pt;
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #64b5f6, stop:1 #2196f3);
+}
+QPushButton:hover {
+    background-color: white;
+    color: #1e88e5;
+    border: 2px solid #1e88e5;
+}
+
+#btnAdd {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #81c784, stop:1 #388e3c);
+}
+#btnAdd:hover {
+    background-color: white;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+}
+
+#btnDelete {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #e57373, stop:1 #d32f2f);
+}
+#btnDelete:hover {
+    background-color: white;
+    color: #b71c1c;
+    border: 2px solid #b71c1c;
+}
+
+#btnLoad, #btnSave, #btnQueries, #btnCharts {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #42a5f5, stop:1 #1e88e5);
+}
+#btnLoad:hover, #btnSave:hover, #btnQueries:hover, #btnCharts:hover {
+    background-color: white;
+    color: #1e88e5;
+    border: 2px solid #1e88e5;
+}
+
+QMenu {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 10pt;
+}
+QMenu::item {
+    padding: 6px 24px;
+}
+QMenu::item:selected {
+    background-color: #bbdefb;
+}
+
+QCheckBox {
+    padding: 6px;
+    spacing: 8px;
+    font-size: 10pt;
+}
+
+QLineEdit, QComboBox {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 200px;
+    font-size: 10pt;
+    background-color: white;
+}
+QLineEdit:focus, QComboBox:focus {
+    border: 2px solid #1e88e5;
+    background-color: #e3f2fd;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="8,1">
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="editTriggers">
+       <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderHighlightSections">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderHighlightSections">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,1,1,1,1">
+     <item>
+      <widget class="QPushButton" name="btnLoad">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+       </property>
+       <property name="text">
+        <string>Загрузить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAdd">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+       </property>
+       <property name="text">
+        <string>Добавить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnDelete">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+       </property>
+       <property name="text">
+        <string>Удалить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSave">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+       </property>
+       <property name="text">
+        <string>Сохранить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnQueries">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+       </property>
+       <property name="text">
+        <string>Запросы</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCharts">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed"/>
+       </property>
+       <property name="text">
+        <string>Графики</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

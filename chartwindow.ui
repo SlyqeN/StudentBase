@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChartWindow</class>
+ <widget class="QDialog" name="ChartWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Диаграммы</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <layout class="QHBoxLayout" name="controlsLayout">
+     <item>
+      <widget class="QComboBox" name="comboBoxChartType">
+       <item>
+        <property name="text">
+         <string>Круговая по курсам</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Круговая по 3 курсу</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Столбчатая по стипендии</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnShowChart">
+       <property name="text">
+        <string>Показать</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QChartView" name="chartView">
+     <property name="renderHint">
+      <enum>QPainter::Antialiasing</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>
